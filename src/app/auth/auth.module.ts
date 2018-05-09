@@ -8,7 +8,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 // import { HeaderComponent } from './header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import {MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule} from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {path: '', component: LandingpageComponent},
   {path: 'login', component: LoginComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
 ]
 @NgModule({
   imports: [
-    CommonModule, RouterModule.forRoot(routes), FlexLayoutModule
+    CommonModule, RouterModule.forRoot(routes), FlexLayoutModule, MatButtonModule, MatFormFieldModule, MatCardModule, FormsModule, ReactiveFormsModule, MatInputModule
   ],
   providers: [AuthService],
   declarations: [LoginComponent, RegisterComponent, SetpasswordComponent, LandingpageComponent]
