@@ -10,10 +10,6 @@
     background-color: #5878d8;
     font-size: 16px;
 }
-.login{
-    position: fixed;
-    top: 30%;
-}
-.login h1{
+h1{
     color: #2851cd;
 }

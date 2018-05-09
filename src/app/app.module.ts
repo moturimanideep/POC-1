@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './auth/header/header.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatButtonModule} from '@angular/material/button';
+import {MatButtonModule, MatSidenavModule, MatIconModule, MatTooltipModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent, HeaderComponent
   ],
   imports: [
-    BrowserModule, AuthModule, WalletModule, RouterModule, FlexLayoutModule, MatButtonModule, BrowserAnimationsModule
+    BrowserModule, AuthModule, WalletModule, RouterModule, FlexLayoutModule, BrowserAnimationsModule, MatSidenavModule, MatButtonModule, MatIconModule, MatTooltipModule, HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
