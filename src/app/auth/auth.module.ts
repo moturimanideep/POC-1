@@ -4,18 +4,22 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SetpasswordComponent } from './setpassword/setpassword.component';
 import { AuthService } from './auth.service';
-import { Routes, Router, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+// import { HeaderComponent } from './header/header.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const routes: Routes = [
-  {path: '', component: LoginComponent},
+  {path: '', component: LandingpageComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'setpassword', component: SetpasswordComponent}
 ]
 @NgModule({
   imports: [
-    CommonModule, RouterModule.forRoot(routes)
+    CommonModule, RouterModule.forRoot(routes), FlexLayoutModule
   ],
   providers: [AuthService],
-  declarations: [LoginComponent, RegisterComponent, SetpasswordComponent]
+  declarations: [LoginComponent, RegisterComponent, SetpasswordComponent, LandingpageComponent]
 })
 export class AuthModule { }
