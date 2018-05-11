@@ -6,17 +6,27 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './auth/header/header.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatButtonModule, MatSidenavModule, MatIconModule, MatTooltipModule} from '@angular/material';
+import {MatButtonModule, MatSidenavModule, MatIconModule, MatTooltipModule, MatToolbarModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
+import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent} from './apex/menu/menu.component';
+import { CommonService} from './service/common.service';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
   declarations: [
-    AppComponent, HeaderComponent
+    AppComponent, MenuComponent
   ],
   imports: [
-    BrowserModule, AuthModule, WalletModule, RouterModule, FlexLayoutModule, BrowserAnimationsModule, MatSidenavModule, MatButtonModule, MatIconModule, MatTooltipModule, HttpModule
+    BrowserModule, AuthModule, WalletModule, RouterModule, FlexLayoutModule, BrowserAnimationsModule, 
+    MatSidenavModule, MatButtonModule, MatIconModule, MatTooltipModule, HttpModule, 
+    SharedModule.forRoot(), CommonModule, HttpClientModule, MatToolbarModule
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

@@ -6,9 +6,9 @@ import { SetpasswordComponent } from './setpassword/setpassword.component';
 import { AuthService } from './auth.service';
 import { Routes, RouterModule } from '@angular/router';
 import { LandingpageComponent } from './landingpage/landingpage.component';
-// import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {path: '', component: LandingpageComponent},
@@ -18,9 +18,10 @@ const routes: Routes = [
 ]
 @NgModule({
   imports: [
-    CommonModule, RouterModule.forRoot(routes), FlexLayoutModule, MatButtonModule, MatFormFieldModule, MatCardModule, FormsModule, ReactiveFormsModule, MatInputModule
+    CommonModule, RouterModule.forRoot(routes), FlexLayoutModule, MatButtonModule, MatFormFieldModule, 
+    MatCardModule, FormsModule, ReactiveFormsModule, MatInputModule, MatToolbarModule
   ],
   providers: [AuthService],
-  declarations: [LoginComponent, RegisterComponent, SetpasswordComponent, LandingpageComponent]
+  declarations: [LoginComponent, RegisterComponent, SetpasswordComponent, LandingpageComponent, HeaderComponent]
 })
 export class AuthModule { }
