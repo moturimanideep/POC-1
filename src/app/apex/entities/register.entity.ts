@@ -1,8 +1,5 @@
 export class Register {
-    firstname: String;
-    lastname: String;
+    username: String;
     email: String;
-    mobile: number;
-    interstedTech: String;
-    workingstatus: String;
+    password: String;
 }

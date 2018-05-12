@@ -1,30 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { ResetPassword } from '../../apex/entities/resetpassword.entity';
 import { FormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService }  from '../auth.service';
-import { SetPassword } from '../../apex/entities/setpassword.entity';
+import { Component, OnInit } from '@angular/core';
+
 @Component({
-  selector: 'app-setpassword',
-  templateUrl: './setpassword.component.html',
-  styleUrls: ['./setpassword.component.css']
+  selector: 'app-resetpassword',
+  templateUrl: './resetpassword.component.html',
+  styleUrls: ['./resetpassword.component.css']
 })
-export class SetpasswordComponent implements OnInit {
+export class ResetpasswordComponent implements OnInit {
 
   UserDetailsForm: FormGroup;
-  setPassword : SetPassword = new SetPassword;
+  resetPassword : ResetPassword = new ResetPassword;
   response: any;
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   constructor(private formBuilder: FormBuilder , private router: Router, private authService: AuthService) { 
     this.UserDetailsForm = this.formBuilder.group({
-      'password': ['',  Validators.compose([Validators.required, Validators.minLength(5)])],
-      'repeatpassword': ['', Validators.compose([Validators.required, Validators.minLength(5)])]
+      'email': ['', [Validators.required, Validators.pattern(this.emailPattern)]]
      });
   }
 
   ngOnInit() {
   }
 
-  Setpassword(){
+  Reset(){
     // console.log(this.resetPassword);
     // this.authService.reset(this.resetPassword)
     //     .subscribe(
@@ -38,4 +38,5 @@ export class SetpasswordComponent implements OnInit {
     //              this.showServerError="OOPS! Something went wrong please try again"   
     //         });
 } 
+
 }
