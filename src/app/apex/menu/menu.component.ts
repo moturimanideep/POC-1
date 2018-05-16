@@ -54,7 +54,7 @@ export class MenuComponent implements OnInit {
       {
         "id": 'PROFILES',
         "name": "My Profile",
-        "link": "myProfile",
+        "link": "profile",
         "icon": "profile"
       },
       {

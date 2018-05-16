@@ -6,6 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./send.component.css']
 })
 export class SendComponent implements OnInit {
+  fileStrategy: any = [
+    {
+    displayValue: 'PDF',
+    value: 'PDF'
+  },
+  {
+    displayValue: 'JPG',
+    value: 'JPG'
+  }
+];
 
   constructor() { }
 

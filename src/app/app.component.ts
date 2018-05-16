@@ -27,7 +27,7 @@ export class AppComponent {
   ngOnInit() {
     this._userSubscription = this.apexService.sessionUserEvent.subscribe(data => {
       // this.sessionUser = Storage.getSessionUser();
-      this.sessionUser = {email: 'mmanideep@gmail.com', password: 'Mani'};
+      this.sessionUser = '';
       console.log(this.sessionUser);
       if(this.sessionUser){
         if(this.navMode == 'over'){

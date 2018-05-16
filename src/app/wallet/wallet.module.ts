@@ -6,20 +6,22 @@ import { SendComponent } from './send/send.component';
 import { ReceiveComponent } from './receive/receive.component';
 import { CreateComponent } from './create/create.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule, MatToolbarModule } from '@angular/material';
-import { WheaderComponent } from './wheader/wheader.component'
+import { MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule, MatToolbarModule, MatListModule, MatSelectModule } from '@angular/material';
+import { WheaderComponent } from './wheader/wheader.component';
+import { ProfileComponent } from './profile/profile.component'
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'send', component: SendComponent},
   {path: 'receive', component: ReceiveComponent},
-  {path: 'create', component: CreateComponent}
+  {path: 'create', component: CreateComponent},
+  {path: 'profile', component: ProfileComponent}
 ]
 
 @NgModule({
   imports: [
     CommonModule, RouterModule, MatButtonModule, MatFormFieldModule, MatCardModule, 
-    MatInputModule, RouterModule.forRoot(routes), FlexLayoutModule, MatToolbarModule
+    MatInputModule, RouterModule.forRoot(routes), FlexLayoutModule, MatToolbarModule, MatListModule, MatSelectModule
   ],
-  declarations: [DashboardComponent, SendComponent, ReceiveComponent, CreateComponent, WheaderComponent]
+  declarations: [DashboardComponent, SendComponent, ReceiveComponent, CreateComponent, WheaderComponent, ProfileComponent]
 })
 export class WalletModule { }
