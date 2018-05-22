@@ -25,9 +25,16 @@ export class AppComponent {
    }
 
   ngOnInit() {
+    this._loaderSubscription = this.apexService.loaderEvent.subscribe(data => {
+      if (data != this.showLoader) {
+        this.showLoader = data;
+      }
+
+    });
+    this.apexService.showLoader(false);
     this._userSubscription = this.apexService.sessionUserEvent.subscribe(data => {
       // this.sessionUser = Storage.getSessionUser();
-      this.sessionUser = '';
+      this.sessionUser = {email: "mmanideep@gmail.com", password: "man"};
       console.log(this.sessionUser);
       if(this.sessionUser){
         if(this.navMode == 'over'){

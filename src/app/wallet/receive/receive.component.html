@@ -3,8 +3,8 @@
     <main fxLayout="row" fxLayoutAlign="center center" style="text-align: center; padding: 15px;"> 
       <mat-card fxFlex="100" style="height: 88vh;" > 
       <div fxLayout="row" style="height: 100px;" >
-        <div fxFlex="10" fxFlex.xs="100" fxFlex.sm="20" fxFlex.md="20" style="text-align: left;">
-            <button mat-raised-button id="btn" style="text-align: center;">Back</button>
+        <div fxFlex="10" fxFlex.xs="100" fxFlex.sm="20" fxFlex.md="20" style="text-align: left; margin-top: 30px;">
+            <a routerLink="/dashboard" class="back">Back</a>
         </div>
         <div fxFlex="90" fxFlex.xs="100" fxFlex.sm="80" fxFlex.md="80" >
             <h1 class="receive">Receive for Wallet: Bitcoin (BTC)</h1>
@@ -19,7 +19,8 @@
           </div>
           <button mat-raised-button disabled>New Address</button>
           <div  fxLayout="row" fxLayoutAlign="center center">
-              <i class="fas fa-qrcode" style="font-size: 28vh;"></i>
+              <!-- <i class="fas fa-qrcode" style="font-size: 28vh;"></i> -->
+              <img src="http://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=3hsdyjhmnds4387654nbhgvj34g5h3n4wbv5ghj3">
           </div>
       </div>
       <div>

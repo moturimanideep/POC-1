@@ -19,4 +19,14 @@ export class ApexService {
     bypassURL(url: string){
         return this._domSanitizer.bypassSecurityTrustResourceUrl(url);
     }
+    showLoader(show: Boolean) {
+        setTimeout(() => {
+            this.loaderEvent.next(show);
+        }, 100)
+      
+   }
+   showMessage(message: string){
+    this._snackBarService.open(message, 'x',{ duration: 9999 });
+  //  snackBarRef.onAction().subscribe( data => {console.log(data) ; });
+}
 }

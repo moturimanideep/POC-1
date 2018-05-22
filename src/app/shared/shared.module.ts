@@ -7,13 +7,13 @@ import { ReportService } from './service/report.service';
 
 import { AppService } from './service/app.service';
 import { ImageCropperModule } from 'ngx-image-cropper';
-
+import { HttpModule } from '@angular/http';
 import { AppImgUploadComponent } from './component/app.imgupload.component';
 import { AppImgLoadComponent } from './component/app.imgload.component';
 import { FormMessagesComponent } from './component/form.messages.component';
 import { AppCropImgComponent } from './component/app.imgcrop.component';
 import { SearchBarComponent } from './component/search-bar.component';
-
+import { HttpService } from './service/http.service';
 import {
     MatFormFieldModule, MatCheckboxModule, MatInputModule, MatRadioModule, MatSelectModule,
     MatSlideToggleModule, MatMenuModule, MatSidenavModule, MatToolbarModule, MatListModule,
@@ -32,7 +32,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatGridListModule, MatCardModule, MatExpansionModule,
         MatButtonModule, MatChipsModule, MatIconModule,
         MatTooltipModule, MatSnackBarModule, MatAutocompleteModule,
-        ImageCropperModule
+        ImageCropperModule, HttpModule
 
     ],
     declarations: [
@@ -51,7 +51,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         SearchBarComponent
 
     ],
-    providers: []
+    providers: [HttpService]
 
 })
 export class SharedModule {

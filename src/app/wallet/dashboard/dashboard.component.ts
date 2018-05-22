@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -48,9 +48,18 @@ export class DashboardComponent implements OnInit {
       mobile: 8686897800
     }
   ]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+  sendWallet(){
+    this.router.navigate(['/send']);
+  }
+  receiveWallet(){
+    this.router.navigate(['/receive'])
+  }
+  deleteWallet(){
+    this.router.navigate(['/delete']);
   }
 
 }

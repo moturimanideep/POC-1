@@ -12,6 +12,7 @@ import {MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule, MatT
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { SetpasswordComponent } from './setpassword/setpassword.component'
+import { HttpModule } from '@angular/http';
 const routes: Routes = [
   {path: '', component: LandingpageComponent},
   {path: 'login', component: LoginComponent},
@@ -22,7 +23,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule, RouterModule.forRoot(routes), FlexLayoutModule, MatButtonModule, MatFormFieldModule, 
-    MatCardModule, FormsModule, ReactiveFormsModule, MatInputModule, MatToolbarModule, SharedModule
+    MatCardModule, FormsModule, ReactiveFormsModule, MatInputModule, MatToolbarModule, SharedModule, HttpModule
   ],
   providers: [AuthService],
   declarations: [LoginComponent, RegisterComponent, SetpasswordComponent, LandingpageComponent, HeaderComponent, ResetpasswordComponent]

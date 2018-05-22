@@ -6,9 +6,8 @@
       <div fxLayout="row wrap">
           <div fxFlex.xs="100" fxFlex.sm="50" fxFlex.md="33.333" fxFlex.lg="25" style="padding:4px" *ngFor="let item of userList">
             <mat-card class="margin-side" class="course-card" (click)="userprofile(item)" style="cursor:pointer;  height:248px">
-              <h3 class="topic-title captilize">{{item.firstname}}</h3>
               <div fxLayout="row wrap">
-                <div fxFlex.xs="100" fx.Flex.sm="50" fx.flex.md="33.333">
+                <!-- <div fxFlex.xs="100" fx.Flex.sm="50" fx.flex.md="33.333">
                   <div class="vpair">
                     <span>Email: </span>
                     <span>{{item.email}}</span>
@@ -16,6 +15,17 @@
                   <div class="hpair">
                     <span>Mobile: </span>
                     <span>{{item.mobile}}</span>
+                  </div>
+                </div> -->
+                <div fxFlex="100">
+                  <h2 >Manideep</h2>
+                  <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 22px;">
+                    <button mat-raised-button >Balance</button>
+                  </div>
+                  <div fxLayout="row" fxLayoutAlign="space-around center" style="padding-top: 35px;">
+                    <button mat-raised-button id="send-btn" (click)="sendWallet()" >Send</button>
+                    <button mat-raised-button id="receive-btn" (click)="receiveWallet()">Receive</button>
+                    <button mat-raised-button id="delete-btn" (click)="deleteWallet()" >Delete</button>
                   </div>
                 </div>
               </div>
@@ -25,3 +35,4 @@
         </div>
   </main>
 </aside>
+

@@ -35,3 +35,23 @@ aside {
     font-size: 14px;
     background-color: #D0D8DF;
 }
+#send-btn{
+    background-color: #7ed321; 
+    box-shadow: 0 2px 4px 0 rgba(138, 134, 134, 0.5); 
+    color: white;
+    margin-right: 7px;
+    min-width: 82px;
+}
+#receive-btn{
+    background-color: #f5a623; 
+    color: white;
+    box-shadow: 0 2px 4px 0 rgba(138, 134, 134, 0.5);
+    margin-right: 7px;
+    min-width: 82px;
+}
+#delete-btn{
+    background-color: #FA6262; 
+    color: white;
+    box-shadow: 0 2px 4px 0 rgba(138, 134, 134, 0.5);
+    min-width: 82px;
+}

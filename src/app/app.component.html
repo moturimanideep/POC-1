@@ -6,6 +6,9 @@
       <mat-icon class="material-icons" style="color:black; font-size: 35px;">view_headline</mat-icon>
     </button> -->
 </div>
+<div id="loading" *ngIf="showLoader">
+    <mat-spinner></mat-spinner>
+</div>
 <mat-sidenav-container>
 <mat-sidenav #sidenav [mode]="navMode" opened="true" *ngIf="sessionUser"  style="background-color: #fff;height: 100vh;width: 280px;">
     <app-menu></app-menu>
