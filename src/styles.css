@@ -65,5 +65,13 @@
     justify-content: center;
     align-items: center;
   }
-
+  .color{
+      color: #5878d8;
+  }
+  .red{
+      color: red;
+  }
+  .textAlign{
+      text-align: center;
+  }
   

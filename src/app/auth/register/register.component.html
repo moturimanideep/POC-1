@@ -4,7 +4,8 @@
           <mat-card>
               <form [formGroup]="UserDetailsForm" novalidate autocomplete="off" (ngSubmit)="Register()">
                 <h1 class="heading">CREATE ACCOUNT</h1>
-                  <div >
+                <p class="red">{{response}}</p>
+                  <div>
                       <mat-form-field class="width">
                         <input matInput type="text" placeholder="UserName (Optional)" [(ngModel)]="register.username" formControlName="username">
                       </mat-form-field>

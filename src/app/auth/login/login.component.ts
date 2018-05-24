@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   showServerError: any;
   UserDetailsForm: FormGroup;
   login : Login = new Login;
-
+  errorMessage: any = '';
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   constructor(private formBuilder: FormBuilder , private router: Router, private authService: AuthService, private appService: AppService) { 
     this.UserDetailsForm = this.formBuilder.group({
@@ -28,14 +28,18 @@ export class LoginComponent implements OnInit {
     Storage.clearSession();
     this.appService.sessionUserEmit(null);
   }
-  loginUser(){
-    //console.log(this.login);
-    this.authService.login(this.login)
+  loginUser(user: any){
+    let user1 = user; 
+    console.log(user1);
+    this.authService.login(user1)
         .subscribe(
             data => {
-              console.log(data)
-              this.authService.storageSave(data);
+             if(data.status == 1){
               this.router.navigate(['dashboard']);
+              this.authService.storageSave(data);
+             }else{
+              this.errorMessage = data.message;
+             }
             },
             error => {
                  console.log(error);

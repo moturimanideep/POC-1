@@ -96,18 +96,17 @@ export class HttpService {
 
     postMethod(httpReq: HttpReq) {
         let url = this.API_ENDPOINT + httpReq.url;
-        console.log(httpReq.body);
-        return this.http.post(url, JSON.stringify(httpReq.body), { headers: this.headers }).map(
+        let data2 = httpReq.body.data;
+        return this.http.post(url, data2, { headers: this.headers }).map(
             (resp: Response) => {
-                console.log(resp);
+                console.log(resp.json());
                 if (httpReq.showLoader && httpReq.showLoader === true) {
                     this.showLoader(false);
                 }
-                if (resp.json().status == 1 || 0) {
-                    return resp.json().data;
+                if (resp.json().status == 1) {
+                    return resp.json();
                 } else {
-                    this.errorMessage(resp.json().error);
-                    return null;
+                    return resp.json();
                 }
 
             },
