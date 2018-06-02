@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent} from './apex/menu/menu.component';
 import { CommonService} from './service/common.service';
 import { CommonModule } from '@angular/common';
-
+import { WalletService } from '../app/wallet/wallet.service';
 @NgModule({
   declarations: [
     AppComponent, MenuComponent
@@ -24,7 +24,7 @@ import { CommonModule } from '@angular/common';
     MatSidenavModule, MatButtonModule, MatIconModule, MatTooltipModule, HttpModule, MatProgressSpinnerModule,
     SharedModule.forRoot(), CommonModule, HttpClientModule, MatToolbarModule
   ],
-  providers: [CommonService],
+  providers: [CommonService, WalletService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

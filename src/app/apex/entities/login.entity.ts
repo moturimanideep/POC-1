@@ -1,4 +1,4 @@
 export class Login {
-    email: string = '';
-    password: string = '';
+    email: string = 'mahesh@gmail.com';
+    password: string = 'mahesh123';
 }

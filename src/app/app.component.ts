@@ -33,7 +33,9 @@ export class AppComponent {
     });
     this.apexService.showLoader(false);
     this._userSubscription = this.apexService.sessionUserEvent.subscribe(data => {
+     
       this.sessionUser = Storage.getSessionUser();
+      //console.log(this.sessionUser);
       // this.sessionUser = {email: "mmanideep@gmail.com", password: "man"};
       if(this.sessionUser){
         if(this.navMode == 'over'){

@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   UserDetailsForm: FormGroup;
   login : Login = new Login;
   errorMessage: any = '';
+  userdata: any;
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
   constructor(private formBuilder: FormBuilder , private router: Router, private authService: AuthService, private appService: AppService) { 
     this.UserDetailsForm = this.formBuilder.group({
@@ -30,13 +31,15 @@ export class LoginComponent implements OnInit {
   }
   loginUser(user: any){
     let user1 = user; 
-    console.log(user1);
+    //console.log(user1);
     this.authService.login(user1)
         .subscribe(
             data => {
              if(data.status == 1){
+              this.userdata = data;
               this.router.navigate(['dashboard']);
-              this.authService.storageSave(data);
+              this.authService.storageSave(data.data);
+
              }else{
               this.errorMessage = data.message;
              }

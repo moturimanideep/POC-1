@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule, MatToolbarModule, MatListModule, MatSelectModule } from '@angular/material';
 import { WheaderComponent } from './wheader/wheader.component';
 import { ProfileComponent } from './profile/profile.component'
+import { WalletService } from '../wallet/wallet.service';
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'send', component: SendComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
     CommonModule, RouterModule, MatButtonModule, MatFormFieldModule, MatCardModule, 
     MatInputModule, RouterModule.forRoot(routes), FlexLayoutModule, MatToolbarModule, MatListModule, MatSelectModule
   ],
-  declarations: [DashboardComponent, SendComponent, ReceiveComponent, CreateComponent, WheaderComponent, ProfileComponent]
+  declarations: [DashboardComponent, SendComponent, ReceiveComponent, CreateComponent, WheaderComponent, ProfileComponent],
+  providers: [WalletService]
 })
 export class WalletModule { }

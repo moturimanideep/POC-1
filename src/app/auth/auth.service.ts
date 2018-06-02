@@ -18,7 +18,6 @@ export class AuthService {
   url: string;
   token: any;
   constructor(private http: Http, private appService: AppService, private httpService: HttpService, private activatedroute: ActivatedRoute) {
-    
    }
 
   //  login(data: any): Observable<any> {
@@ -40,7 +39,7 @@ export class AuthService {
      httpReq.url = "login";
      httpReq.showLoader = true;
      httpReq.body.data = data;
-     console.log(httpReq)
+    
      return this.httpService.restCall(httpReq);
   }
 

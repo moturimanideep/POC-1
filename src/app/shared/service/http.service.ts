@@ -75,9 +75,10 @@ export class HttpService {
 
 
     getMethod(httpReq: HttpReq) {
-        console.log(httpReq);
+        //console.log(httpReq);
         let paramString = Util.GetParamString(httpReq.body ? httpReq.body.data : {});
         let url = this.API_ENDPOINT + httpReq.url + paramString;
+        
         return this.http.get(url, { headers: this.headers }).map(
             (resp: Response) => {
                 if (httpReq.showLoader && httpReq.showLoader === true) {
@@ -85,7 +86,8 @@ export class HttpService {
                 }
 
                 if (resp.json().status == 1) {
-                    return resp.json().data;
+                    
+                    return resp.json();
                 } else {
                     this.errorMessage(resp.json().error);
                     return null;
@@ -99,7 +101,6 @@ export class HttpService {
         let data2 = httpReq.body.data;
         return this.http.post(url, data2, { headers: this.headers }).map(
             (resp: Response) => {
-                console.log(resp.json());
                 if (httpReq.showLoader && httpReq.showLoader === true) {
                     this.showLoader(false);
                 }

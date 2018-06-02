@@ -44,7 +44,6 @@ export class MenuComponent implements OnInit {
     this.menuList = [];
       this.menus().forEach( (item) => {
             this.menuList.push(item);
-            console.log(this.menuList)
           
       })
   }
