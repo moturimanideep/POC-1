@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
     this.walletService.walletlist(this.user).subscribe(
       data => {
        this.walletList = data.data;
-       console.log(this.walletList);
+       //console.log(this.walletList);
       },
       error => {
            console.log(error);

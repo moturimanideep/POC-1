@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
   // API_END_POINT: 'http://dlworkshop.herokuapp.com/'
-  API_END_POINT: 'http://172.23.24.147:8585/'
+  API_END_POINT: 'http://172.23.24.20:8585/'
 };

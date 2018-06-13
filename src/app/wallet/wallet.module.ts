@@ -10,18 +10,19 @@ import { MatButtonModule, MatFormFieldModule, MatCardModule, MatInputModule, Mat
 import { WheaderComponent } from './wheader/wheader.component';
 import { ProfileComponent } from './profile/profile.component'
 import { WalletService } from '../wallet/wallet.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'send', component: SendComponent},
   {path: 'receive', component: ReceiveComponent},
-  {path: 'create', component: CreateComponent},
+  {path: 'createWallet', component: CreateComponent},
   {path: 'profile', component: ProfileComponent}
 ]
 
 @NgModule({
   imports: [
     CommonModule, RouterModule, MatButtonModule, MatFormFieldModule, MatCardModule, 
-    MatInputModule, RouterModule.forRoot(routes), FlexLayoutModule, MatToolbarModule, MatListModule, MatSelectModule
+    MatInputModule, RouterModule.forRoot(routes), FlexLayoutModule, MatToolbarModule, MatListModule, MatSelectModule, FormsModule, ReactiveFormsModule
   ],
   declarations: [DashboardComponent, SendComponent, ReceiveComponent, CreateComponent, WheaderComponent, ProfileComponent],
   providers: [WalletService]

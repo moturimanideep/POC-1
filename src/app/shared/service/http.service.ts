@@ -99,6 +99,7 @@ export class HttpService {
     postMethod(httpReq: HttpReq) {
         let url = this.API_ENDPOINT + httpReq.url;
         let data2 = httpReq.body.data;
+        console.log(data2);
         return this.http.post(url, data2, { headers: this.headers }).map(
             (resp: Response) => {
                 if (httpReq.showLoader && httpReq.showLoader === true) {

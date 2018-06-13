@@ -21,4 +21,8 @@ export class WheaderComponent implements OnInit {
     this.router.navigate(['login'])
   }
 
+  createWallet(){
+    this.router.navigate(['createWallet']);
+  }
+
 }

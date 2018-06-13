@@ -34,8 +34,8 @@ export class Storage {
          key = this.pid+'-'+key;
 
         if(val) {
-             console.log(key);
-            console.log(val);
+             //console.log(key);
+            //console.log(val);
             console.log(Array.isArray(val));
             if(typeof val === 'object'){
                 val = JSON.stringify(val);
@@ -46,7 +46,7 @@ export class Storage {
             }
 
             sessionStorage.setItem(key, val);
-            console.log(sessionStorage.getItem(key));
+            //console.log(sessionStorage.getItem(key));
         }
 
     }

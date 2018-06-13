@@ -21,14 +21,14 @@ export class WalletService {
 
   }
 
-  walletlist(data: any){
+  walletlist(data: any): Observable<any> {
     const httpReq: HttpReq = new HttpReq();
     httpReq.type = this.REST_TYPE_GET;
     httpReq.url = "walletlist";
     httpReq.showLoader = true;
     this.email = {email: data.email};
     httpReq.body.data = this.email;
-    console.log(httpReq)
+    //console.log(httpReq)
     return this.httpService.restCall(httpReq);
   }
 
@@ -39,6 +39,17 @@ export class WalletService {
 
   getParam(key: string){
     return this.activatedroute.snapshot.queryParams[key];
+  }
+
+  createWallet(data: any): Observable<any> {
+    const httpReq: HttpReq = new HttpReq();
+    httpReq.type = this.REST_TYPE_POST;
+    httpReq.url = "create";
+    httpReq.showLoader = true;
+    console.log(data);
+    httpReq.body.data = data;
+    //console.log(httpReq)
+    return this.httpService.restCall(httpReq);
   }
 
 }

@@ -35,8 +35,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(user1)
         .subscribe(
             data => {
+              //console.log(data);
              if(data.status == 1){
               this.userdata = data;
+              //console.log(this.userdata);
               this.router.navigate(['dashboard']);
               this.authService.storageSave(data.data);
 
@@ -45,7 +47,7 @@ export class LoginComponent implements OnInit {
              }
             },
             error => {
-                 console.log(error);
+                 //console.log(error);
                  this.showServerError="OOPS! Something went wrong please try again"   
             });
 } 
